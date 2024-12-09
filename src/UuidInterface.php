@@ -106,4 +106,14 @@ interface UuidInterface extends
      * @psalm-return non-empty-string
      */
     public function __toString(): string;
+
+    /**
+     * @return array{bytes: string}
+     */
+    public function __serialize(): array;
+
+    /**
+     * @param array{bytes?: string} $data
+     */
+    public function __unserialize(array $data): void;
 }
